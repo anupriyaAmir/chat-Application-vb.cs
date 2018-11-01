@@ -1,4 +1,6 @@
-  SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;User Instance=True");
+using System.Data.SqlClient;
+
+SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;User Instance=True");
 
  protected void Button1_Click(object sender, EventArgs e)
  {
@@ -11,5 +13,12 @@
         Response.Write("<script>alert('Data inserted successfully')</script>");
     }
 
+decimal d = Convert.ToDecimal(TextBox1.Text);
+        decimal c = Convert.ToDecimal(TextBox2.Text);
+        decimal v = d + c;
+        Label1.Text = "("+v+")";
+
+
 DELETE FROM `movies` WHERE `movie_id` = 18;
 UPDATE `members` SET `contact_number` = '0759 253 542' WHERE `membership_number` = 1;
+
